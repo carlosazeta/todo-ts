@@ -17,13 +17,13 @@ export const Footer: React.FC<Props> = ({
   handleFilterChange
 }) => {
   const singleActiveCount = activeCount === 1
-  const activeTodoWord = singleActiveCount ? 'tarea' : 'tareas'
+  const activeTodoWord = singleActiveCount ? 'task' : 'tasks'
 
   return (
     <footer className="footer">
 
       <span className="todo-count">
-        <strong>{activeCount}</strong> {activeTodoWord} pendiente{!singleActiveCount && 's'}
+        <strong>{activeCount}</strong> {activeTodoWord} pending{!singleActiveCount && 's'}
       </span>
 
       <Filters filterSelected={filterSelected} handleFilterChange={handleFilterChange} />
@@ -33,7 +33,7 @@ export const Footer: React.FC<Props> = ({
           <button
             className="clear-completed"
             onClick={onClearCompleted}>
-              Borrar completados
+              Delete completed
           </button>
         )
       }
